@@ -28,7 +28,6 @@ function validateForm() {
   <div class="container mt-5">
     <h1 class="text-center mb-4">NFP Nutrition Web App</h1>
 
-    <!-- 原始卡片区域 -->
     <div class="row">
       <div class="col-md-6 mb-3">
         <div class="card p-3">
@@ -47,7 +46,6 @@ function validateForm() {
       </div>
     </div>
 
-    <!-- 验证表单区域 -->
     <div class="card mt-4 p-4">
       <h4 class="mb-3">Subscribe to Nutrition Tips</h4>
 
