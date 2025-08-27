@@ -4,6 +4,21 @@ import { ref } from 'vue'
 const name = ref('')
 const email = ref('')
 const errors = ref({})
+const cards = ref([
+  {
+    title: 'Explore Recipes',
+    description: 'Discover easy, budget-friendly, healthy meals for all families.',
+    btnText: 'Browse',
+    btnClass: 'btn-primary'
+  },
+  {
+    title: 'Join a Workshop',
+    description: 'Find free community programs that help you eat and cook better.',
+    btnText: 'Find Workshops',
+    btnClass: 'btn-success'
+  }
+])
+
 
 function validateForm() {
   errors.value = {}
@@ -29,22 +44,19 @@ function validateForm() {
     <h1 class="text-center mb-4">NFP Nutrition Web App</h1>
 
     <div class="row">
-      <div class="col-md-6 mb-3">
+      <div
+        class="col-md-6 mb-3"
+        v-for="(card, index) in cards"
+        :key="index"
+      >
         <div class="card p-3">
-          <h4>Explore Recipes</h4>
-          <p>Discover easy, budget-friendly, healthy meals for all families.</p>
-          <button class="btn btn-primary">Browse</button>
-        </div>
-      </div>
-
-      <div class="col-md-6 mb-3">
-        <div class="card p-3">
-          <h4>Join a Workshop</h4>
-          <p>Find free community programs that help you eat and cook better.</p>
-          <button class="btn btn-success">Find Workshops</button>
-        </div>
+        <h4>{{ card.title }}</h4>
+        <p>{{ card.description }}</p>
+        <button class="btn" :class="card.btnClass">{{ card.btnText }}</button>
       </div>
     </div>
+  </div>
+
 
     <div class="card mt-4 p-4">
       <h4 class="mb-3">Subscribe to Nutrition Tips</h4>
